@@ -24,10 +24,11 @@ import {
   Rocket,
 } from "lucide-react";
 
+import demoVideo from "./assets/demo/demo.mp4";
 import screenshot1 from "./assets/screenshots/screenshot1.png";
 import dev1 from "./assets/developers/dev1.png";
 import dev2 from "./assets/developers/dev2.png";
-import dev3 from "./assets/developers/dev3.png";
+import dev3 from "./assets/developers/dev3.jpeg";
 
 const features = [
   {
@@ -74,28 +75,31 @@ const workflow = [
 const developers = [
   {
     name: "Yash Mayekar",
-    role: "AI Systems Engineer",
+    role: "AI Engineer",
     image: dev1,
     bio: "Focused on AI orchestration systems, autonomous workflows, and developer productivity tooling.",
-    email: "mailto:yashvmayekar@gmail.com",
+    email:
+      "https://mail.google.com/mail/?view=cm&fs=1&to=yashvmayekar@gmail.com",
     linkedin: "https://www.linkedin.com/in/yashmayekar21",
   },
   {
     name: "Sainath Khot",
-    role: "AI-Ops Engineer",
+    role: "AI Engineer",
     image: dev2,
     // bio: "Building scalable interfaces, backend systems, and AI-native engineering experiences.",
-    bio: "Specialized in intelligent orchestration, infrastructure systems, and local LLM workflows.",
-    email: "mailto:sainathkhot206@gmail.com",
+    bio: "Specialized in AI orchestration, scalable infrastructure systems, and local-first LLM engineering workflows.",
+    email:
+      "https://mail.google.com/mail/?view=cm&fs=1&to=sainathkhot206@gmail.com",
     linkedin: "https://www.linkedin.com/in/sainath-khot",
   },
   {
     name: "Aryan Parab",
-    role: "Backend & AI Engineer",
+    role: "AI Engineer",
     image: dev3,
     // bio: "Specialized in intelligent orchestration, infrastructure systems, and local LLM workflows.",
     bio: "Building scalable interfaces, backend systems, and AI-native engineering experiences.",
-    email: "mailto:parabaryan16@gmail.com",
+    email:
+      "https://mail.google.com/mail/?view=cm&fs=1&to=parabaryan16@gmail.com",
     linkedin: "https://www.linkedin.com/in/aryanparab",
   },
 ];
@@ -318,32 +322,130 @@ export default function App() {
                   </div>
 
                   {/* SCREENSHOT */}
-                  <div className="relative mt-8 min-h-[320px] bg-[#0d0d0d] border-[4px] border-dashed border-[#D9FF57] overflow-hidden">
-                    <div className="absolute top-5 left-5 opacity-20">
+                  <div
+                    className="
+                      relative mt-8
+                      w-full
+
+                      aspect-video
+
+                      bg-[#0d0d0d]
+                      rounded-[24px]
+                      bg-[#0d0d0d]
+
+                      overflow-hidden
+                    "
+                  >
+                    {/* BG DECOR */}
+                    {/* <div className="absolute top-5 left-5 opacity-20 z-10">
                       <Orbit size={120} className="text-[#6E56FF]" />
                     </div>
 
-                    <div className="absolute bottom-5 right-5 opacity-20">
+                    <div className="absolute bottom-5 right-5 opacity-20 z-10">
                       <Binary size={120} className="text-[#FF6B00]" />
-                    </div>
+                    </div> */}
 
-                    <div className="absolute top-5 right-5 bg-[#D9FF57] text-black border-[3px] border-white px-4 py-2 font-black shadow-[4px_4px_0px_#fff] rotate-3">
+                    {/* LABEL */}
+                    <div
+                      className="
+                        absolute top-1.5 right-1
+                        bg-[#D9FF57]
+                        text-black
+                        border-[3px] border-white
+                        px-4 py-2
+                        font-black
+                        shadow-[4px_4px_0px_#fff]
+                        rotate-3
+                        z-20
+                      "
+                    >
                       EXTENSION PREVIEW
                     </div>
 
-                    <div className="p-6 relative z-10">
-                      <img
-                        src={screenshot1}
-                        alt="Extension Preview"
-                        className="w-full h-full object-cover rounded-none border-[4px] border-white shadow-[8px_8px_0px_#6E56FF]"
-                      />
+                    {/* VIDEO WRAPPER */}
+                    <div className="absolute inset-0 p-4 md:p-6">
+                      <div
+                        className="
+                          relative group
+                          w-full h-full
+                          overflow-hidden
+                          bg-black
+                        "
+                      >
+                        <video
+                          src={demoVideo}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          controls={false}
+                          className="
+                            absolute inset-0
+
+                            w-full h-full
+
+                            object-cover
+                            object-center
+                            translate-y-[4px]
+                            shadow-[10px_10px_0px_#6E56FF]
+
+                            group-hover:scale-[1.03]
+
+                            group-hover:shadow-[14px_14px_0px_#D9FF57]
+
+                            transition-all
+                            duration-700
+                            ease-out
+                          "
+                        />
+
+                        {/* DARK CINEMATIC OVERLAY */}
+                        <div
+                          className="
+                            absolute inset-0
+
+                            bg-gradient-to-t
+                            from-black/40
+                            via-transparent
+                            to-transparent
+
+                            opacity-0
+                            group-hover:opacity-100
+
+                            transition-all
+                            duration-700
+
+                            z-10
+                          "
+                        />
+
+                        {/* LIGHT REFLECTION */}
+                        <div
+                          className="
+                            absolute inset-0
+
+                            bg-gradient-to-r
+                            from-transparent
+                            via-white/10
+                            to-transparent
+
+                            -translate-x-[200%]
+                            group-hover:translate-x-[200%]
+
+                            transition-all
+                            duration-1500
+
+                            z-20
+                          "
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* FLOAT CARD */}
-              <div className="absolute -bottom-10 right-0 bg-[#D9FF57] text-black border-[4px] border-white px-6 py-5 shadow-[8px_8px_0px_#ffffff] rotate-[5deg]">
+              <div className="absolute -bottom-14 right-2 z-50 bg-[#D9FF57] text-black border-[4px] border-white px-6 py-5 shadow-[8px_8px_0px_#ffffff] rotate-[5deg]">
                 <div className="font-black text-3xl">LOCAL AI</div>
                 <div className="font-bold">Powered by Ollama</div>
               </div>
@@ -493,7 +595,7 @@ export default function App() {
 
                   {/* GITHUB */}
                   <a
-                    href="https://github.com/yourusername/yourrepo"
+                    href="https://github.com/YashMayekar/Agile-AI"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="bg-white text-black px-8 py-5 border-[4px] border-black font-black text-lg shadow-[8px_8px_0px_#000] hover:-translate-y-1 transition-all"
@@ -564,6 +666,8 @@ export default function App() {
                   <div className="flex gap-4 mt-8">
                     <a
                       href={dev.email}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex-1 text-center px-5 py-4 bg-[#FF6B00] text-black border-[3px] border-white font-black shadow-[5px_5px_0px_#fff] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
                     >
                       EMAIL
@@ -571,6 +675,8 @@ export default function App() {
 
                     <a
                       href={dev.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex-1 text-center px-5 py-4 bg-[#6E56FF] text-white border-[3px] border-white font-black shadow-[5px_5px_0px_#fff] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all"
                     >
                       LINKEDIN
